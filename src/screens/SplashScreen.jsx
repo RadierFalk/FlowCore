@@ -9,7 +9,7 @@ export default function SplashScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../../assets/splash-icon.png")}
+        source={require("../../assets/logomascoteP.png")}
         style={{ width: 200, height: 200 }}
       />
       <Text style={styles.text}>Carregando FlowCore...</Text>

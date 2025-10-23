@@ -1,34 +1,71 @@
-import React, { useContext } from "react";
+// src/screens/Lobby.jsx
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { AuthContext } from "../contexts/AuthContext";
 
-export default function LobbyScreen() {
-  const { user, logout } = useContext(AuthContext);
-
+export default function Lobby({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao FlowCore 🎉</Text>
-      <Text style={styles.subtitle}>Usuário: {user?.email}</Text>
+      <Text style={styles.title}>Trilhas de Aprendizado</Text>
 
-      <View style={styles.tracks}>
-        <Text style={styles.track}>🪶 Trilha Iniciante</Text>
-        <Text style={styles.track}>🔥 Trilha Intermediária (bloqueada)</Text>
-        <Text style={styles.track}>⚔️ Trilha Avançada (bloqueada)</Text>
-      </View>
+      <TouchableOpacity
+        style={styles.trilhaCard}
+        onPress={() => navigation.navigate("Quiz")}
+      >
+        <Text style={styles.trilhaTitle}>🌿 Trilha Iniciante</Text>
+        <Text style={styles.trilhaDescription}>
+          Comece sua jornada aprendendo sobre a cultura e tradições do Norte!
+        </Text>
+      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={logout}>
-        <Text style={styles.buttonText}>Sair</Text>
+      <TouchableOpacity style={[styles.trilhaCard, styles.trilhaBloqueada]}>
+        <Text style={styles.trilhaTitle}>🏞️ Trilha Intermediária</Text>
+        <Text style={styles.trilhaDescription}>
+          Desbloqueie após concluir a trilha iniciante!
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={[styles.trilhaCard, styles.trilhaBloqueada]}>
+        <Text style={styles.trilhaTitle}>🎭 Trilha Avançada</Text>
+        <Text style={styles.trilhaDescription}>
+          Mergulhe nas lendas e histórias da Amazônia!
+        </Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#fff" },
-  title: { fontSize: 26, fontWeight: "bold" },
-  subtitle: { fontSize: 16, marginTop: 10 },
-  tracks: { marginTop: 40, alignItems: "center" },
-  track: { fontSize: 18, marginBottom: 10 },
-  button: { backgroundColor: "red", padding: 12, borderRadius: 8, marginTop: 30 },
-  buttonText: { color: "#fff", fontWeight: "bold" },
+  container: {
+    flex: 1,
+    backgroundColor: "#F0FFF0",
+    padding: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#0A3D0A",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  trilhaCard: {
+    backgroundColor: "#B2FF9E",
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+    elevation: 3,
+  },
+  trilhaTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#004D00",
+  },
+  trilhaDescription: {
+    fontSize: 14,
+    color: "#003300",
+    marginTop: 8,
+  },
+  trilhaBloqueada: {
+    opacity: 0.5,
+    backgroundColor: "#D9EAD3",
+  },
 });
