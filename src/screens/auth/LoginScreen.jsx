@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -21,6 +21,10 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require("../../../assets/logomascoteP.png")}
+        style={{ width: 100, height: 110 }}
+      />
       <Text style={styles.title}>Entrar no FlowCore</Text>
 
       <TextInput

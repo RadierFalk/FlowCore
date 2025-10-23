@@ -5,6 +5,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 export default function Lobby({ navigation }) {
   return (
     <View style={styles.container}>
+      
       <Text style={styles.title}>Trilhas de Aprendizado</Text>
 
       <TouchableOpacity
