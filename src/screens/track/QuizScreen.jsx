@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 export default function QuizScreen({ navigation }) {
-  const [step, setStep] = useState(-1); // -1 = tela inicial
+  const [step, setStep] = useState(-1);
   const [message, setMessage] = useState("");
 
   const perguntas = [
@@ -51,7 +51,7 @@ export default function QuizScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.startButton}
-          onPress={() => setStep(0)} // agora começa o quiz de verdade
+          onPress={() => setStep(0)} 
         >
           <Text style={styles.startText}>Começar Quiz</Text>
         </TouchableOpacity>
