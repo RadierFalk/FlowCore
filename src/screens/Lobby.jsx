@@ -96,30 +96,60 @@ export default function Lobby({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#E6FFE6",
     padding: 20,
     justifyContent: "center",
   },
+  
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#0A3D0A",
-    marginTop: 40,
-    marginBottom: 20,
-    textAlign: "center",
     color: "#004000",
+    marginTop: 40,
     marginBottom: 30,
+    textAlign: "center",
   },
+  
+  subtitle: {
+    fontSize: 16,
+    color: "#006600",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  
   trilhaCard: {
     borderRadius: 20,
     padding: 22,
     marginBottom: 18,
     elevation: 4,
   },
-  trilhaIniciante: { backgroundColor: "#A5F2A5" },
-  trilhaIntermediaria: { backgroundColor: "#8FF2E3" },
-  trilhaAvancada: { backgroundColor: "#C7A5F2" },
-  trilhaTitle: { fontSize: 22, fontWeight: "bold", color: "#003D00" },
-  trilhaDescription: { fontSize: 15, color: "#003300", marginTop: 6 },
-  trilhaBloqueada: { backgroundColor: "#D0E6D0", opacity: 0.6 },
+  
+  trilhaIniciante: { 
+    backgroundColor: "#A5F2A5" 
+  },
+  
+  trilhaIntermediaria: { 
+    backgroundColor: "#8FF2E3" 
+  },
+  
+  trilhaAvancada: { 
+    backgroundColor: "#FFD700" 
+  },
+  
+  trilhaTitle: { 
+    fontSize: 22, 
+    fontWeight: "bold", 
+    color: "#003D00" 
+  },
+  
+  trilhaDescription: { 
+    fontSize: 15, 
+    color: "#003300", 
+    marginTop: 6 
+  },
+  
+  trilhaBloqueada: { 
+    backgroundColor: "#D0E6D0", 
+    opacity: 0.6 
+  },
 });

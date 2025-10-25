@@ -10,32 +10,16 @@ export default function QuizScreen({ navigation, route }) {
   const [vidas, setVidas] = useState(3);
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const perguntas = [
-    {
-      id: 1,
-      pergunta: "Esse sanduíche é famoso em Manaus. Qual o nome dele?",
-      imagem: require("../../../assets/X-cab.jpg"), // coloca tua imagem na pasta assets
-      opcoes: ["Acarajé", "X-Caboquinho", "Cuscuz Paulista", "Feijoada"],
-      correta: "X-Caboquinho",
-    },
-    {
-      id: 2,
-      pergunta: "Como é chamado os bois do Festival de Parintins?",
-      imagem: require("../../../assets/G_C.jpg"), // coloca tua imagem na pasta assets
-      opcoes: ["Cajú e Castanha", "Caprichoso e Garantido", "Simone e Simaria", "Pepê e Neném"],
-      correta: "Caprichoso e Garantido",
-    },
-  ];
-  // 🔥 Define perguntas por trilha
+  // 🔥 Define perguntas por trilha (ÚNICA DECLARAÇÃO)
   const perguntas =
     trilha === "iniciante"
       ? [
           {
             id: 1,
-            pergunta: "Qual fruto é amplamente consumido no Amazonas e muito usado com farinha?",
-            imagem: require("../../../assets/G_C.jpg"),
-            opcoes: ["Cajá", "Açaí", "Buriti", "Tucumã"],
-            correta: "Açaí",
+            pergunta: "Esse sanduíche é famoso em Manaus. Qual o nome dele?",
+            imagem: require("../../../assets/X-cab.jpg"),
+            opcoes: ["Acarajé", "X-Caboquinho", "Cuscuz Paulista", "Feijoada"],
+            correta: "X-Caboquinho",
           },
           {
             id: 2,
@@ -231,6 +215,7 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "center",
   },
+  
   title: {
     fontSize: 22,
     fontWeight: "bold",
@@ -238,67 +223,74 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
+  
   intro: {
     fontSize: 16,
     color: "#004D00",
     textAlign: "center",
     marginBottom: 40,
   },
+  
   startButton: {
     backgroundColor: "#7A9B6A",
     borderRadius: 12,
     padding: 15,
     alignItems: "center",
   },
+  
   startText: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
   },
+  
   option: {
     backgroundColor: "#C8FACC",
     borderRadius: 12,
     padding: 15,
     marginVertical: 8,
   },
+  
   optionCerta: {
     backgroundColor: "#8FFFA1",
     borderRadius: 12,
     padding: 15,
     marginVertical: 8,
   },
+  
   optionErrada: {
     backgroundColor: "#FF8F8F",
     borderRadius: 12,
     padding: 15,
     marginVertical: 8,
   },
+  
   optionText: {
     color: "#004D00",
     fontSize: 16,
     textAlign: "center",
   },
+  
   message: {
     marginTop: 20,
     fontSize: 16,
     textAlign: "center",
+    fontWeight: "bold",
   },
+  
   imagem: {
     width: "100%",
     height: 200,
     marginBottom: 20,
     borderRadius: 60,
   },
+  
   vidas: {
-  position: 'absolute',
-  top: 50, 
-  left: 20,
-  fontSize: 16,
-  fontWeight: 'bold',
-  zIndex: 10,
-  },
-  optionCerta: {
-    backgroundColor: "#C8FACC",
+    position: 'absolute',
+    top: 50, 
+    left: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
+    zIndex: 10,
   },
 });
-
