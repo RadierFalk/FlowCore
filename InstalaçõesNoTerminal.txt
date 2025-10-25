@@ -8,3 +8,5 @@ npm install nativewind
 
 
 #Verificar alternativa para realizar login sem internet
+
+Falta adicionar botao pra acessar o perfil do usuario, botao pra voltar pra pagina de login.

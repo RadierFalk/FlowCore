@@ -58,10 +58,44 @@ export default function RegisterScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#fff" },
-  title: { fontSize: 24, fontWeight: "bold", marginBottom: 30 },
-  input: { width: "80%", borderWidth: 1, borderColor: "#ccc", borderRadius: 8, padding: 10, marginBottom: 15 },
-  button: { backgroundColor: "#007bff", padding: 12, borderRadius: 8, width: "80%", alignItems: "center" },
-  buttonText: { color: "#fff", fontWeight: "bold" },
-  error: { color: "red", marginBottom: 10 },
+  container: { 
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    backgroundColor: "#F1FFF1" 
+  },
+  
+  title: { 
+    fontSize: 24, 
+    fontWeight: "bold", 
+    marginBottom: 30,
+    color: "#0A3D0A", 
+  },
+  
+  input: { 
+    width: "80%", 
+    borderWidth: 1, 
+    borderColor: "#ccc", 
+    borderRadius: 10, 
+    padding: 10, 
+    marginBottom: 15 
+  },
+  
+  button: { 
+    backgroundColor: "#7A9B6A", 
+    padding: 12, 
+    borderRadius: 10, 
+    width: "80%", 
+    alignItems: "center" 
+  },
+  
+  buttonText: { 
+    color: "#fff", 
+    fontWeight: "bold" 
+  },
+  
+  error: { 
+    color: "red", 
+    marginBottom: 10 
+  },
 });

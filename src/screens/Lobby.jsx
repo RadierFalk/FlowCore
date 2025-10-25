@@ -38,13 +38,14 @@ export default function Lobby({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F0FFF0",
+    backgroundColor: "#FFFFFF",
     padding: 20,
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
     color: "#0A3D0A",
+    marginTop: 40,
     marginBottom: 20,
     textAlign: "center",
   },

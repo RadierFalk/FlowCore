@@ -37,10 +37,37 @@ export default function TrackList({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
-  title: { fontSize: 22, fontWeight: "bold", marginBottom: 12, textAlign: "center" },
-  card: { padding: 16, backgroundColor: "#e6f7ff", borderRadius: 10, marginBottom: 12 },
-  locked: { backgroundColor: "#ddd" },
-  cardTitle: { fontSize: 18, fontWeight: "bold" },
-  lockText: { marginTop: 8, color: "#666" }
+  container: { 
+    flex: 1, 
+    padding: 16,
+    backgroundColor: "#f0f8ff" 
+  },
+  
+  title: { 
+    fontSize: 22, 
+    fontWeight: "bold", 
+    marginBottom: 12, 
+    textAlign: "center" 
+  },
+  
+  card: { 
+    padding: 16, 
+    backgroundColor: "#e6f7ff", 
+    borderRadius: 10, 
+    marginBottom: 12 
+  },
+  
+  locked: { 
+    backgroundColor: "#ddd" 
+  },
+  
+  cardTitle: { 
+    fontSize: 18, 
+    fontWeight: "bold" 
+  },
+  
+  lockText: { 
+    marginTop: 8, 
+    color: "#666" 
+  }
 });

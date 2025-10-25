@@ -11,7 +11,7 @@ export default function QuizScreen({ navigation }) {
   const perguntas = [
     {
       id: 1,
-      pergunta: "Qual desses pratos é típico do Amazonas?",
+      pergunta: "Esse sanduíche é famoso em Manaus. Qual o nome dele?",
       imagem: require("../../../assets/X-cab.jpg"), // coloca tua imagem na pasta assets
       opcoes: ["Acarajé", "X-Caboquinho", "Cuscuz Paulista", "Feijoada"],
       correta: "X-Caboquinho",
@@ -126,7 +126,7 @@ export default function QuizScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E8FFE8",
+    backgroundColor: "#ffffffff",
     padding: 20,
     justifyContent: "center",
   },
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   startButton: {
-    backgroundColor: "#48C774",
+    backgroundColor: "#7A9B6A",
     borderRadius: 12,
     padding: 15,
     alignItems: "center",
@@ -169,5 +169,22 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 16,
     textAlign: "center",
+  },
+  imagem: {
+    width: "100%",
+    height: 200,
+    marginBottom: 20,
+    borderRadius: 60,
+  },
+  vidas: {
+  position: 'absolute',
+  top: 50, 
+  left: 20,
+  fontSize: 16,
+  fontWeight: 'bold',
+  zIndex: 10,
+  },
+  optionCerta: {
+    backgroundColor: "#C8FACC",
   },
 });
