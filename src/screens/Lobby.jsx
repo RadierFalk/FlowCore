@@ -45,7 +45,7 @@ export default function Lobby({ navigation }) {
           onPressIn={handlePressIn}
           onPressOut={() => handlePressOut("iniciante")}
         >
-          <Text style={styles.trilhaTitle}>🌿 Trilha Iniciante</Text>
+          <Text style={styles.trilhaTitle}>🌿 Nivel Curumim</Text>
           <Text style={styles.trilhaDescription}>
             Comece sua jornada aprendendo sobre a cultura e tradições do Norte!
           </Text>
@@ -63,7 +63,7 @@ export default function Lobby({ navigation }) {
           inicianteConcluido && navigation.navigate("Quiz", { trilha: "intermediaria" })
         }
       >
-        <Text style={styles.trilhaTitle}>🏞️ Trilha Intermediária</Text>
+        <Text style={styles.trilhaTitle}>🏞️ Nivel Pajé</Text>
         <Text style={styles.trilhaDescription}>
           {inicianteConcluido
             ? "Agora você pode continuar sua jornada!"
@@ -82,7 +82,7 @@ export default function Lobby({ navigation }) {
           intermediariaConcluida && navigation.navigate("Quiz", { trilha: "avancada" })
         }
       >
-        <Text style={styles.trilhaTitle}>🎭 Trilha Avançada</Text>
+        <Text style={styles.trilhaTitle}>🎭 Nivel Cacique</Text>
         <Text style={styles.trilhaDescription}>
           {intermediariaConcluida
             ? "Modo lenda desbloqueado! Encare as lendas amazônicas!"
