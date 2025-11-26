@@ -16,15 +16,15 @@ export default function QuizScreen({ navigation, route }) {
       ? [
           {
             id: 1,
-            pergunta: "Qual é a lenda amazônica sobre um boto que se transforma em homem??",
-            imagem: require("../../../assets/X-cab.jpg"),
+            pergunta: "A imagem abaixo representa qual lenda amazônica?",
+            imagem: require("../../../assets/Boto.png"),
             opcoes: ["Lenda do Curupira", "Lenda do Boto Cor de Rosa", "Lenda da Iara", "Lenda do Mapinguari"],
             correta: "Lenda do Boto Cor de Rosa",
           },
           {
             id: 2,
             pergunta: "Qual é o prato típico amazonense feito com mandioca fermentada?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/Tucupi.png"),
             opcoes: [
               "Vatapá",
               "Feijoada",
@@ -36,7 +36,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 3,
             pergunta: "Qual personagem do folclore amazônico protege a floresta e tem os pés virados para trás?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/curupira.jpg"),
             opcoes: [
               "Saci-Pererê",
               "Curupira",
@@ -60,7 +60,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 5,
             pergunta: "Qual fruto amazônico é muito usado na produção de sorvetes e sucos roxos?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/acai.jpg"),
             opcoes: [
               "Cupuaçu",
               "Graviola",
@@ -75,21 +75,21 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 1,
             pergunta: "Na lenda da Iara, o que acontece com os homens que são seduzidos por ela?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/iara.png"),
             opcoes: ["Ficam ricos", "São levados para o fundo das águas", "Ganham poderes mágicos", "Transformam-se em peixes"],
             correta: "São levados para o fundo das águas",
           },
           {
             id: 2,
             pergunta: "Qual é o boi do Festival de Parintins que tem como cor o vermelho?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/boi2.jpg"),
             opcoes: ["Boi Caprichoso", "Boi Garantido", "Boi Bumbá", "Boi da Cara Preta"],
             correta: "Boi Garantido",
           },
           {
             id: 3,
             pergunta: "O que é o Tacacá, tradicional iguaria amazonense?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/tacaca.jpg"),
             opcoes: [
               "Um doce de tapioca",
               "Uma sopa quente com tucupi e camarão",
@@ -101,7 +101,7 @@ export default function QuizScreen({ navigation, route }) {
            {
             id: 4,
             pergunta: "Segundo o folclore, o Mapinguari é conhecido por ter qual característica marcante?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/mapingua.png"),
             opcoes: [
               "Pés virados para trás",
               "Uma boca na barriga",
@@ -113,7 +113,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 5,
             pergunta: "Qual é o Teatro mais famoso de Manaus, construído durante o Ciclo da Borracha?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/teatro.jpeg"),
             opcoes: [
               "Teatro Municipal",
               "Teatro Amazonas",
@@ -127,7 +127,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 1,
             pergunta: "Qual peixe amazônico é considerado o maior peixe de escamas de água doce do mundo?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/Pirarucu.jpg"),
             opcoes: [
               "Tambaqui",
               "Tucunaré",
@@ -139,7 +139,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 2,
             pergunta: "A lenda da Matinta Pereira diz que ela aparece:",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/matinta.jpg"),
             opcoes: [
               "Durante o dia, assobiando perto das árvores",
               "À noite, assobiando e pedindo tabaco",
@@ -151,7 +151,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 3,
             pergunta: "Na cultura amazonense, o que são as 'palafitas'?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/palafita.jpg"),
             opcoes: [
               "Embarcações típicas da região",
               "Casas construídas sobre estacas na beira dos rios",
@@ -163,7 +163,7 @@ export default function QuizScreen({ navigation, route }) {
           {
             id: 4,
             pergunta: "Segundo a lenda do Guaraná, de onde surgiu esta planta?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/guarana.jpg"),
             opcoes: [
               "Das lágrimas de uma deusa",
               "Dos olhos de um indiozinho",
@@ -175,7 +175,7 @@ export default function QuizScreen({ navigation, route }) {
            {
             id: 5,
             pergunta: "Qual rio banha a cidade de Manaus junto com o Rio Negro?",
-            imagem: require("../../../assets/G_C.jpg"),
+            imagem: require("../../../assets/EncAguas.jpg"),
             opcoes: [
               "Rio Amazonas",
               "Rio Madeira",
