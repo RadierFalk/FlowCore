@@ -210,10 +210,10 @@ export default function QuizScreen({ navigation, route }) {
           Alert.alert(
             "🎉 Parabéns!",
             trilha === "iniciante"
-              ? "Você concluiu a Trilha Iniciante! Trilha Intermediária desbloqueada!"
+              ? "Você concluiu a Trilha do Curumim! Trilha do Pajé desbloqueada!"
               : trilha === "intermediaria"
-              ? "Você concluiu a Trilha Intermediária! Trilha Avançada desbloqueada!"
-              : "Você concluiu a Trilha Avançada! Tu é lenda, mano!",
+              ? "Você concluiu a Trilha do Pajé! Trilha do Cacique desbloqueada!"
+              : "Você concluiu a Trilha do Cacique! Tu é lenda, mano!",
             [
               {
                 text: "Voltar pro Lobby",
@@ -251,17 +251,17 @@ export default function QuizScreen({ navigation, route }) {
       <View style={styles.container}>
         <Text style={styles.title}>
           {trilha === "iniciante"
-            ? "🌿 Trilha Iniciante"
+            ? "🌿 Trilha do Curumim"
             : trilha === "intermediaria"
-            ? "🏞️ Trilha Intermediária"
-            : "🎭 Trilha Avançada"}
+            ? "🏞️ Trilha do Pajé"
+            : "🎭 Trilha do Cacique "}
         </Text>
 
         <Text style={styles.intro}>
           {trilha === "iniciante"
             ? "Bem-vindo! Aqui você vai testar seus conhecimentos sobre a cultura do Norte!"
             : trilha === "intermediaria"
-            ? "Agora o desafio ficou mais difícil! Mostra que tu é caboclo raiz!"
+            ? "Agora o desafio ficou mais difícil! Mostre que voce merece ser um Pajé!"
             : "Modo lenda ativado! As perguntas agora são pra quem conhece mesmo a Amazônia!"}
         </Text>
 
