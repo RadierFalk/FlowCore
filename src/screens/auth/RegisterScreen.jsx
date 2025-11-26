@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { 
+  View, 
+  Text, 
+  TextInput, 
+  TouchableOpacity, 
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView
+} from "react-native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../services/firebase";
 import { setDoc, doc } from "firebase/firestore";
@@ -23,46 +32,95 @@ export default function RegisterScreen({ navigation }) {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, "users", user.uid), {
-        name,
-        city,
-        state,
+      await setDoc(doc(db, "usuarios", user.uid), {
+        nome: name,
+        cidade: city,
+        estado: state,
         email,
-        createdAt: new Date(),
+        streak: 0,
+        progress: {},
+        criadoEm: new Date().toISOString(),
       });
 
-      navigation.navigate("Login");
     } catch (err) {
+      console.error("Erro ao cadastrar:", err);
       setError("Erro ao cadastrar usuário!");
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Criar Conta</Text>
+    <KeyboardAvoidingView 
+      style={{ flex: 1 }} 
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <ScrollView 
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
+        <Text style={styles.title}>Criar Conta</Text>
 
-      <TextInput style={styles.input} placeholder="Nome completo" value={name} onChangeText={setName} />
-      <TextInput style={styles.input} placeholder="Cidade" value={city} onChangeText={setCity} />
-      <TextInput style={styles.input} placeholder="Estado" value={state} onChangeText={setState} />
-      <TextInput style={styles.input} placeholder="E-mail" value={email} onChangeText={setEmail} />
-      <TextInput style={styles.input} placeholder="Senha" secureTextEntry value={password} onChangeText={setPassword} />
-      <TextInput style={styles.input} placeholder="Confirmar senha" secureTextEntry value={confirm} onChangeText={setConfirm} />
+        <TextInput 
+          style={styles.input} 
+          placeholder="Nome completo" 
+          value={name} 
+          onChangeText={setName} 
+        />
 
-      {error ? <Text style={styles.error}>{error}</Text> : null}
+        <TextInput 
+          style={styles.input} 
+          placeholder="Cidade" 
+          value={city} 
+          onChangeText={setCity} 
+        />
 
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
-      </TouchableOpacity>
-    </View>
+        <TextInput 
+          style={styles.input} 
+          placeholder="Estado" 
+          value={state} 
+          onChangeText={setState} 
+        />
+
+        <TextInput 
+          style={styles.input} 
+          placeholder="E-mail" 
+          value={email} 
+          onChangeText={setEmail} 
+        />
+
+        <TextInput 
+          style={styles.input} 
+          placeholder="Senha" 
+          secureTextEntry 
+          value={password} 
+          onChangeText={setPassword} 
+        />
+
+        <TextInput 
+          style={styles.input} 
+          placeholder="Confirmar senha" 
+          secureTextEntry 
+          value={confirm} 
+          onChangeText={setConfirm} 
+        />
+
+        {error ? <Text style={styles.error}>{error}</Text> : null}
+
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+          <Text style={styles.buttonText}>Cadastrar</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { 
-    flex: 1, 
+    flexGrow: 1,
     justifyContent: "center", 
     alignItems: "center", 
-    backgroundColor: "#F1FFF1" 
+    backgroundColor: "#F1FFF1",
+    paddingVertical: 60,
   },
   
   title: { 

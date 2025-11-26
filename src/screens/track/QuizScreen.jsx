@@ -249,12 +249,18 @@ export default function QuizScreen({ navigation, route }) {
   if (step === -1) {
     return (
       <View style={styles.container}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.navigate("Lobby")}
+        >
+          <Text style={styles.backText}>← Voltar</Text>
+        </TouchableOpacity>
         <Text style={styles.title}>
           {trilha === "iniciante"
-            ? "🌿 Trilha do Curumim"
+            ? "🐒 Trilha do Curumim"
             : trilha === "intermediaria"
-            ? "🏞️ Trilha do Pajé"
-            : "🎭 Trilha do Cacique "}
+            ? "🦜 Trilha do Pajé"
+            : "🐆 Trilha do Cacique "}
         </Text>
 
         <Text style={styles.intro}>
@@ -276,6 +282,9 @@ export default function QuizScreen({ navigation, route }) {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("Lobby")}>
+        <Text style={styles.backText}>← Voltar</Text>
+      </TouchableOpacity>
       <Text style={styles.vidas}>💚 Vidas: {vidas}</Text>
       <Text style={styles.title}>{pergunta}</Text>
 
@@ -384,9 +393,25 @@ const styles = StyleSheet.create({
   vidas: {
     position: 'absolute',
     top: 50, 
-    left: 20,
+    right: 20,
     fontSize: 16,
     fontWeight: 'bold',
     zIndex: 10,
+  },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    backgroundColor: "#e0ffe0",
+    borderRadius: 10,
+    zIndex: 999,
+  },
+
+  backText: {
+    color: "#004D00",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

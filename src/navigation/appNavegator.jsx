@@ -8,6 +8,7 @@ import LoginScreen from "../screens/auth/LoginScreen";
 import RegisterScreen from "../screens/auth/RegisterScreen";
 import LobbyScreen from "../screens/Lobby";
 import QuizScreen from "../screens/track/QuizScreen";
+import ProfileScreen from "../screens/Profile";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function AppNavigator() {
           
             <Stack.Screen name="Lobby" component={LobbyScreen} />
             <Stack.Screen name="Quiz" component={QuizScreen} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
           </>
         ) : (
           // Usuário não logado

@@ -1,6 +1,6 @@
 // src/screens/Lobby.jsx
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Animated, Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Lobby({ navigation }) {
@@ -33,6 +33,20 @@ export default function Lobby({ navigation }) {
 
   return (
     <View style={styles.container}>
+      {/* Botão de Perfil */}
+      <TouchableOpacity 
+        style={styles.profileButton}
+        onPress={() => navigation.navigate("Profile")}
+        activeOpacity={0.7}
+      >
+        <View style={styles.profileIcon}>
+          <Text style={styles.profileEmoji}>👤</Text>
+        </View>
+      </TouchableOpacity>
+       <Image 
+        source={require("../../assets/logomascoteP.png")}
+        style={styles.logo}
+      />
       <Text style={styles.title}>Trilhas do Grande Cacique</Text>
       <Text style={styles.subtitle}>
         Inicie sua caminhada e embarque nessa jornada de cultura e conhecimento!
@@ -99,6 +113,39 @@ const styles = StyleSheet.create({
     backgroundColor: "#E6FFE6",
     padding: 20,
     justifyContent: "center",
+  },
+  logo: {
+    width: 90,
+    height: 120,
+    alignSelf: "center",
+    marginBottom: 0,
+    marginTop: 20,
+  },
+  
+  // Estilos do botão de perfil
+  profileButton: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    zIndex: 10,
+  },
+  
+  profileIcon: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#A5F2A5",
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  
+  profileEmoji: {
+    fontSize: 28,
   },
   
   title: {
