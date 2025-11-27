@@ -18,7 +18,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 export default function LoginScreen({ navigation }) {
   const { setUser } = useContext(AuthContext);
   const colorScheme = useColorScheme();
-  const isDark = useColorScheme() === "dark";
+  const isDark = colorScheme === "dark";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
