@@ -11,7 +11,7 @@ export default {
     userInterfaceStyle: "light",
     "newArchEnabled": true,
     splash: {
-      image: "./assets/logomascoteP.png",
+      image: "./assets/IconFlow.jpg",
       resizeMode: "contain",
       backgroundColor: "#ffffff"
     },
@@ -22,7 +22,7 @@ export default {
     android: {
       package: "com.anomynous.FlowCore",
       adaptiveIcon: {
-        foregroundImage: "./assets/logomascoteP.png",
+        foregroundImage: "./assets/IconFlow.jpg",
         backgroundColor: "#ffffff"
       },
       edgeToEdgeEnabled: true
