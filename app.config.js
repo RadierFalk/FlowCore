@@ -7,7 +7,7 @@ export default {
     owner: "radierfalk",
     version: "1.0.0",
     orientation: "portrait",
-    icon: "./assets/logomascoteP.png",
+    icon: "./assets/IconFlow.jpg",
     userInterfaceStyle: "light",
     "newArchEnabled": true,
     splash: {
