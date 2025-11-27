@@ -8,7 +8,8 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
-  ScrollView
+  ScrollView,
+  useColorScheme
 } from "react-native";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase";
@@ -16,6 +17,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export default function LoginScreen({ navigation }) {
   const { setUser } = useContext(AuthContext);
+  const colorScheme = useColorScheme();
+  const isDark = useColorScheme() === "dark";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -47,16 +50,30 @@ export default function LoginScreen({ navigation }) {
         <Text style={styles.title}>Entrar no FlowCore</Text>
 
         <TextInput
-          style={styles.input}
+          style={[
+            styles.input,
+            { 
+              backgroundColor: isDark ? "#1f1f1f" : "#fff",
+              color: isDark ? "#fff" : "#000"
+            }
+          ]}
           placeholder="E-mail"
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
           value={email}
           onChangeText={setEmail}
         />
 
         <TextInput
-          style={styles.input}
+          style={[
+            styles.input,
+            { 
+              backgroundColor: isDark ? "#1f1f1f" : "#fff",
+              color: isDark ? "#fff" : "#000"
+            }
+          ]}
           placeholder="Senha"
           secureTextEntry
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
           value={password}
           onChangeText={setPassword}
         />
@@ -95,7 +112,7 @@ const styles = StyleSheet.create({
   input: {
     width: "80%",
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#020202ff",
     borderRadius: 8,
     padding: 10,
     marginBottom: 15,

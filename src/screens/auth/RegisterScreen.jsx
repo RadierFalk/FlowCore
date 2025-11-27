@@ -7,13 +7,17 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
-  ScrollView
+  ScrollView,
+  useColorScheme
 } from "react-native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../services/firebase";
 import { setDoc, doc } from "firebase/firestore";
 
 export default function RegisterScreen({ navigation }) {
+  const colorScheme = useColorScheme();
+  const isDark = colorScheme === "dark";
+
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -60,48 +64,72 @@ export default function RegisterScreen({ navigation }) {
       >
         <Text style={styles.title}>Criar Conta</Text>
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="Nome completo" 
-          value={name} 
-          onChangeText={setName} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="Nome completo"
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={name}
+          onChangeText={setName}
         />
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="Cidade" 
-          value={city} 
-          onChangeText={setCity} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="Cidade"
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={city}
+          onChangeText={setCity}
         />
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="Estado" 
-          value={state} 
-          onChangeText={setState} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="Estado"
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={state}
+          onChangeText={setState}
         />
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="E-mail" 
-          value={email} 
-          onChangeText={setEmail} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="E-mail"
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={email}
+          onChangeText={setEmail}
         />
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="Senha" 
-          secureTextEntry 
-          value={password} 
-          onChangeText={setPassword} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="Senha"
+          secureTextEntry
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={password}
+          onChangeText={setPassword}
         />
 
-        <TextInput 
-          style={styles.input} 
-          placeholder="Confirmar senha" 
-          secureTextEntry 
-          value={confirm} 
-          onChangeText={setConfirm} 
+        <TextInput
+          style={[
+            styles.input,
+            { backgroundColor: isDark ? "#1f1f1f" : "#fff", color: isDark ? "#fff" : "#000" }
+          ]}
+          placeholder="Confirmar senha"
+          secureTextEntry
+          placeholderTextColor={isDark ? "#ccc" : "#555"}
+          value={confirm}
+          onChangeText={setConfirm}
         />
 
         {error ? <Text style={styles.error}>{error}</Text> : null}
@@ -133,7 +161,7 @@ const styles = StyleSheet.create({
   input: { 
     width: "80%", 
     borderWidth: 1, 
-    borderColor: "#ccc", 
+    borderColor: "#0c0c0cff", 
     borderRadius: 10, 
     padding: 10, 
     marginBottom: 15 
