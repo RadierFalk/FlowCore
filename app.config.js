@@ -1,3 +1,5 @@
+import { runtimeVersion } from "expo-updates";
+
 export default {
   expo: {
     name: "FlowCore",
@@ -27,6 +29,13 @@ export default {
     },
     web: {
       favicon: "./assets/favicon.png"
+    },
+
+    updates: {
+      url: "https://u.expo.dev/377d25ae-ed60-4bfc-bcb4-8d36a62d64d3"
+    },
+    runtimeVersion: {
+      policy: "appVersion"
     },
 
     // 👇 AQUI tu adiciona as configs secretas
