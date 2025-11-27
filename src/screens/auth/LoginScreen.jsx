@@ -46,8 +46,12 @@ export default function LoginScreen({ navigation }) {
           source={require("../../../assets/logomascoteP.png")}
           style={{ width: 100, height: 110 }}
         />
-
-        <Text style={styles.title}>Entrar no FlowCore</Text>
+        <Image
+          source={require("../../../assets/NomeApp.png")}
+          style={{ width: 200, height: 110, marginBottom: 0, marginTop: -20 }}
+        />
+        <Text style={styles.Description}>By RadLet Inc</Text>
+        <Text style={styles.title}>Entrar</Text>
 
         <TextInput
           style={[
@@ -89,6 +93,8 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
+    
+    
   );
 }
 
@@ -107,6 +113,13 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: "#0A3D0A",
     marginTop: 20,
+  },
+  Description: {
+    fontSize: 13,
+    marginBottom: 20,
+    marginTop: -40,
+    fontStyle: "italic",
+    color: "#0A3D0A",
   },
 
   input: {

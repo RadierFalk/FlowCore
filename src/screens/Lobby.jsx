@@ -47,6 +47,7 @@ export default function Lobby({ navigation }) {
         source={require("../../assets/logomascoteP.png")}
         style={styles.logo}
       />
+      
       <Text style={styles.title}>Trilhas do Grande Cacique</Text>
       <Text style={styles.subtitle}>
         Inicie sua caminhada e embarque nessa jornada de cultura e conhecimento!

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { 
   View, 
   Text, 
-  TextInput, 
+  TextInput,
+  Image, 
   TouchableOpacity, 
   StyleSheet,
   KeyboardAvoidingView,
@@ -62,6 +63,19 @@ export default function RegisterScreen({ navigation }) {
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.backText}>← Voltar</Text>
+        </TouchableOpacity>
+
+        <Image
+          source={require("../../../assets/logomascoteP.png")}
+          style={{ width: 85, height: 110 }}
+        />
+        <Image
+          source={require("../../../assets/NomeApp.png")}
+          style={{ width: 160, height: 110, marginBottom: 0, marginTop: -30 }}
+        />
+        <Text style={styles.Description}>By RadLet Inc</Text>
         <Text style={styles.title}>Criar Conta</Text>
 
         <TextInput
@@ -157,7 +171,13 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: "#0A3D0A", 
   },
-  
+  Description: {
+    fontSize: 13,
+    marginBottom: 20,
+    marginTop: -40,
+    fontStyle: "italic",
+    color: "#0A3D0A",
+  },
   input: { 
     width: "80%", 
     borderWidth: 1, 
@@ -183,5 +203,21 @@ const styles = StyleSheet.create({
   error: { 
     color: "red", 
     marginBottom: 10 
+  },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    backgroundColor: "#e0ffe0",
+    borderRadius: 10,
+    zIndex: 999,
+  },
+
+  backText: {
+    color: "#004D00",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
