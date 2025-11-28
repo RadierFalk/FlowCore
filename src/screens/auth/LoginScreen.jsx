@@ -16,17 +16,17 @@ import { auth } from "../../services/firebase";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function LoginScreen({ navigation }) {
-  const { setUser } = useContext(AuthContext);
   const colorScheme = useColorScheme();
   const isDark = colorScheme === "dark";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      setUser(userCredential.user);
+      await signInWithEmailAndPassword(auth, email, password);
+      // NÃO usa setUser — o AuthContext vai atualizar automaticamente
     } catch (err) {
       setError("E-mail ou senha inválidos!");
     }
@@ -93,8 +93,6 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
-    
-    
   );
 }
 

@@ -2,25 +2,34 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Animated, Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
+import { useCallback } from "react";
 
 export default function Lobby({ navigation }) {
   const scaleAnim = new Animated.Value(1);
+
   const [inicianteConcluido, setInicianteConcluido] = useState(false);
   const [intermediariaConcluida, setIntermediariaConcluida] = useState(false);
 
-  useEffect(() => {
-    const loadProgress = async () => {
-      try {
-        const iniciante = await AsyncStorage.getItem("trilha_iniciante_concluida");
-        const intermediaria = await AsyncStorage.getItem("trilha_intermediaria_concluida");
-        if (iniciante === "true") setInicianteConcluido(true);
-        if (intermediaria === "true") setIntermediariaConcluida(true);
-      } catch (e) {
-        console.log("Erro ao carregar progresso:", e);
-      }
-    };
-    loadProgress();
-  }, []);
+  // 🔥 Função para carregar o progresso salvo
+  const loadProgress = async () => {
+    try {
+      const iniciante = await AsyncStorage.getItem("trilha_iniciante_concluida");
+      const intermediaria = await AsyncStorage.getItem("trilha_intermediaria_concluida");
+
+      setInicianteConcluido(iniciante === "true");
+      setIntermediariaConcluida(intermediaria === "true");
+    } catch (e) {
+      console.log("Erro ao carregar progresso:", e);
+    }
+  };
+
+  // 🔥 Carrega ao entrar NA TELA (não apenas no primeiro render)
+  useFocusEffect(
+    useCallback(() => {
+      loadProgress();
+    }, [])
+  );
 
   const handlePressIn = () => {
     Animated.spring(scaleAnim, { toValue: 0.95, useNativeDriver: true }).start();
@@ -33,8 +42,9 @@ export default function Lobby({ navigation }) {
 
   return (
     <View style={styles.container}>
+
       {/* Botão de Perfil */}
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.profileButton}
         onPress={() => navigation.navigate("Profile")}
         activeOpacity={0.7}
@@ -43,11 +53,12 @@ export default function Lobby({ navigation }) {
           <Text style={styles.profileEmoji}>👤</Text>
         </View>
       </TouchableOpacity>
-       <Image 
+
+      <Image 
         source={require("../../assets/logomascoteP.png")}
         style={styles.logo}
       />
-      
+
       <Text style={styles.title}>Trilhas do Grande Cacique</Text>
       <Text style={styles.subtitle}>
         Inicie sua caminhada e embarque nessa jornada de cultura e conhecimento!
@@ -104,6 +115,7 @@ export default function Lobby({ navigation }) {
             : "Desbloqueie após concluir a trilha intermediária!"}
         </Text>
       </TouchableOpacity>
+
     </View>
   );
 }
@@ -122,15 +134,14 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     marginTop: 20,
   },
-  
-  // Estilos do botão de perfil
+
   profileButton: {
     position: "absolute",
     top: 50,
     left: 20,
     zIndex: 10,
   },
-  
+
   profileIcon: {
     width: 50,
     height: 50,
@@ -138,17 +149,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#A5F2A5",
     justifyContent: "center",
     alignItems: "center",
-    elevation: 3,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
   },
-  
+
   profileEmoji: {
     fontSize: 28,
   },
-  
+
   title: {
     fontSize: 30,
     fontWeight: "bold",
@@ -157,47 +163,39 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: "center",
   },
-  
+
   subtitle: {
     fontSize: 16,
     color: "#006600",
     textAlign: "center",
     marginBottom: 20,
   },
-  
+
   trilhaCard: {
     borderRadius: 20,
     padding: 22,
     marginBottom: 18,
     elevation: 4,
   },
-  
-  trilhaIniciante: { 
-    backgroundColor: "#A5F2A5" 
+
+  trilhaIniciante: { backgroundColor: "#A5F2A5" },
+  trilhaIntermediaria: { backgroundColor: "#8FF2E3" },
+  trilhaAvancada: { backgroundColor: "#FFD700" },
+
+  trilhaTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#003D00",
   },
-  
-  trilhaIntermediaria: { 
-    backgroundColor: "#8FF2E3" 
+
+  trilhaDescription: {
+    fontSize: 15,
+    color: "#003300",
+    marginTop: 6,
   },
-  
-  trilhaAvancada: { 
-    backgroundColor: "#FFD700" 
-  },
-  
-  trilhaTitle: { 
-    fontSize: 22, 
-    fontWeight: "bold", 
-    color: "#003D00" 
-  },
-  
-  trilhaDescription: { 
-    fontSize: 15, 
-    color: "#003300", 
-    marginTop: 6 
-  },
-  
-  trilhaBloqueada: { 
-    backgroundColor: "#D0E6D0", 
-    opacity: 0.6 
+
+  trilhaBloqueada: {
+    backgroundColor: "#D0E6D0",
+    opacity: 0.6,
   },
 });

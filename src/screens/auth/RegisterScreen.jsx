@@ -47,6 +47,8 @@ export default function RegisterScreen({ navigation }) {
         criadoEm: new Date().toISOString(),
       });
 
+      navigation.navigate("Login");
+
     } catch (err) {
       console.error("Erro ao cadastrar:", err);
       setError("Erro ao cadastrar usuário!");
@@ -64,7 +66,7 @@ export default function RegisterScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.backText}>← Voltar</Text>
+          <Text style={styles.backText}>← Voltar</Text>
         </TouchableOpacity>
 
         <Image
